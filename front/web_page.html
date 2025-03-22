@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Video Streaming</title>
+</head>
+<body>
+    <div id="video-container"></div>
+
+    <script>
+        const NUM_STREAMS = 9; 
+        const container = document.getElementById('video-container');
+
+        // Function to create a WebSocket connection for a stream
+        function createStream(streamId) {
+            const img = document.createElement('img');
+            img.width = 400;
+            img.height = 400;
+            img.alt = `Stream ${streamId}`;
+            container.appendChild(img);
+
+            const ws = new WebSocket(`ws://127.0.0.1:8003/ws/stream/${streamId}`);
+
+            ws.onmessage = (event) => {
+                const blob = new Blob([event.data], { type: 'image/jpeg' });
+                const url = URL.createObjectURL(blob);
+                img.src = url;
+            };
+
+            ws.onclose = () => {
+                console.log(`WebSocket for stream ${streamId} closed`);
+            };
+
+            ws.onerror = (error) => {
+                console.error(`WebSocket error for stream ${streamId}:`, error);
+            };
+        }
+
+        // Create WebSocket connections for all streams
+        for (let i = 0; i < NUM_STREAMS; i++) {
+            createStream(i);
+        }
+    </script>
+</body>
+</html>

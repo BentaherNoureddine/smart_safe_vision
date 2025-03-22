@@ -1,0 +1,92 @@
+cameras:
+  - id: "camera1"
+    url: "rtsp://admin:admin@sndp.selfip.com:554/snl/live/1/1"
+    location:
+      latitude: 40.7128
+      longitude: -74.0060
+      zone: "entrance"
+  - id: "camera2"
+    url: "rtsp://admin:admin@sndp.selfip.com:555/snl/live/1/1"
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+  - id: "camera6"
+    url: "rtsp://admin:admin@sndp.selfip.com:555/snl/live/1/1"
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+  - id: "camera3"
+    url: "rtsp://admin:admin@sndp.selfip.com:555/snl/live/1/1"
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+  - id: "camera4"
+    url: "rtsp://admin:admin@sndp.selfip.com:555/snl/live/1/1"
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+  - id: "camera5"
+    url: "rtsp://admin:admin@sndp.selfip.com:555/snl/live/1/1"
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+  - id: "camera7"
+    url: "rtsp://admin:admin@sndp.selfip.com:555/snl/live/1/1"
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+  - id: "camera8"
+    url: "rtsp://admin:admin@sndp.selfip.com:555/snl/live/1/1"
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+  - id: "camera9"
+    url: "rtsp://admin:admin@sndp.selfip.com:556/snl/live/1/1"
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+  - id: "camera10"
+    url: 0
+    location:
+      latitude: 40.7129
+      longitude: -74.0061
+      zone: "parking"
+
+  - id: "camera11"
+    url: "rtsp://admin:admin@sndp.selfip.com:554/snl/live/1/1"
+    location:
+      latitude: 40.7128
+      longitude: -74.0060
+      zone: "entrance"
+  - id: "camera12"
+    url: "rtsp://admin:admin@sndp.selfip.com:554/snl/live/1/1"
+    location:
+      latitude: 40.7128
+      longitude: -74.0060
+      zone: "entrance"
+  - id: "camera13"
+    url: "rtsp://admin:admin@sndp.selfip.com:554/snl/live/1/1"
+    location:
+      latitude: 40.7128
+      longitude: -74.0060
+      zone: "entrance"
+  - id: "camera14"
+    url: "rtsp://admin:admin@sndp.selfip.com:554/snl/live/1/1"
+    location:
+      latitude: 40.7128
+      longitude: -74.0060
+      zone: "entrance"
+  - id: "camera15"
+    url: "rtsp://admin:admin@sndp.selfip.com:554/snl/live/1/1"
+    location:
+      latitude: 40.7128
+      longitude: -74.0060
+      zone: "entrance"

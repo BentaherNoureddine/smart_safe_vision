@@ -1,0 +1,21 @@
+
+camera_urls = {
+    0: "vid1.mp4",
+    1: "vid2.mp4",
+    2: "vid3.mp4",
+    3: "vid4.mp4",
+    4: "vid5.mp4",
+    5: 0,
+    6: "vid6.mp4",
+    7: "vid7.mp4",
+    8: "vid8.mp4",
+    9: "vid9.mp4",
+    10: "vid10.mp4",
+    11: "rtsp://admin:1111@192.168.1.120:554/live",
+    12: "rtsp://admin:1111@192.168.1.125:554/live",
+    13: "vid11.mp4",
+    14: "vid12.mp4",
+    15: "vid13.mp4",
+    16: "vid14.mp4",
+    17: "vid15.mp4",
+}

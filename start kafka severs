@@ -1,0 +1,6 @@
+1/ start zookeeper server:
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+2/ start kafka server:
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
