@@ -1,13 +1,17 @@
 print("i'm the reader")
 import cv2
-import base64
 import json
 import time
 import threading
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI, HTTPException
 from kafka import KafkaProducer
+from requests import Session
 import uvicorn
-from fastapi.middleware.cors import CORSMiddleware
+
+
+from database.database import get_db
+from model.camera import Camera
+
 
 app = FastAPI()
 KAFKA_BROKER_URL = 'localhost:9092'
@@ -29,6 +33,62 @@ camera_urls = {
     8: "vid8.mp4",
     9: "vid9.mp4",
 }
+
+
+
+
+
+# get all cameras
+@app.get("/cameras")
+def get_cameras(db: Session = Depends(get_db)):
+    cameras = db.query(Camera).all()
+    return cameras
+    
+
+
+
+
+#get camera by id
+@app.get("/camera/{camera_id}")
+def get_camera(camera_id: int, db: Session = Depends(get_db)):
+    camera = db.query(Camera).filter(Camera.id == camera_id).first()
+    
+    if not camera:
+        return {"error": "Camera not found"}
+    return camera
+
+
+
+#delete camera by id
+@app.delete("/camera/{camera_id}")
+def delete_camera(camera_id: int, db: Session = Depends(get_db)):
+    camera = db.query(Camera).filter(Camera.id == camera_id).first()
+    if not camera:
+        raise HTTPException(status_code=404, detail="Camera not found")
+    
+    db.delete(camera)
+    db.commit()
+    return {"message": "Camera deleted successfully"}
+
+
+
+
+
+#create new camera
+@app.post("/camera/create")
+def create_camera(url:str, db: Session = Depends(get_db)):
+    
+    camera = db.query(Camera).filter(Camera.url == url).first()
+    if camera:
+        raise HTTPException(status_code=409, detail="Camera already exists")
+    
+    
+    new_camera = Camera(url=url)
+    db.add(new_camera)
+    db.commit()
+    return {"message": "Camera created successfully"}
+
+
 
 
 def read_and_send_frames(camera_id, camera_url):
