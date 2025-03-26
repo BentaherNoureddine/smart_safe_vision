@@ -1,13 +1,31 @@
 import threading
 import json
+from fastapi import requests
 from kafka import KafkaConsumer
 import time
 import cv2
 import numpy as np
 import os
+import requests
+
 
 KAFKA_BROKER_URL = "localhost:9092"
-camera_ids = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,18]  # Adjust based on available camera streams
+
+
+camera_ids = [] 
+
+
+cameras = requests.get("http://127.0.0.1:8001/cameras").json()
+
+for camera in cameras:
+    camera_ids.append(camera["id"])
+
+
+
+for i in range(10):
+    print(cameras)
+
+
 
 def consume_results(camera_id):
     """Consumes detection results from Kafka and prints them."""

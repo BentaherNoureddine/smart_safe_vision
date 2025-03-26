@@ -7,7 +7,7 @@ import uvicorn
 
 # Kafka Configuration
 KAFKA_BROKER = "localhost:9092"
-CAMERA_TOPICS = [f"frames_processed_{i}" for i in range(19)] 
+CAMERA_TOPICS = [f"frames_processed_{i}" for i in range(50)] 
 
 # Dictionary to store Kafka consumers
 consumers = {}
