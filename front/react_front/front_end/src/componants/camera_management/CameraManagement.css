@@ -1,0 +1,45 @@
+/* General container styling */
+.camera-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Camera list styling */
+.camera-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.camera-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+/* Add camera form styling */
+.add-camera-form {
+    margin-top: 20px;
+}
+
+.camera-input {
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.add-camera-button {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-camera-button:hover {
+    background-color: #218838;
+}
